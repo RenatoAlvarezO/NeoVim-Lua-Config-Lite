@@ -25,7 +25,7 @@ packer.init {
     open_fn = function()
       return require("packer.util").float { border = "rounded" }
     end,
- },
+  },
 }
 
 return packer.startup(
@@ -71,5 +71,6 @@ return packer.startup(
     use "nvim-telescope/telescope.nvim"
     -- Outline
     use "simrat39/symbols-outline.nvim"
-
+    --  Flutter
+    use "thosakwe/vim-flutter"
   end)
