@@ -23,6 +23,7 @@ keymap("n", "<C-j>", "<C-w>j", opts)
 keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-\\>","<C-w>v",opts)
+
 --  Buffer Navigation
 keymap("n","<s-l>",":bnext<cr>",opts)
 keymap("n","<s-k>",":bprevious<cr>",opts)
@@ -60,3 +61,9 @@ keymap("n","<leader>b",":Telescope buffers theme=dropdown previewer=false<CR>",{
 
 --  ToggleTerm
 keymap("","<C-g>","<cmd> lua _LAZYGIT_TOGGLE()<CR>",{})
+
+--  Wrap Text
+keymap("n","<A-z>",":set wrap!<cr>",opts)
+
+--  Outline
+keymap("n","<A-o>",":SymbolsOutline <cr>",opts)

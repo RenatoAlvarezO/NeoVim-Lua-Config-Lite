@@ -69,4 +69,7 @@ return packer.startup(
     use "APZelos/blamer.nvim"
     --  Telescope
     use "nvim-telescope/telescope.nvim"
+    -- Outline
+    use "simrat39/symbols-outline.nvim"
+
   end)
