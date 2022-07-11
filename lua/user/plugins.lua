@@ -44,6 +44,7 @@ return packer.startup(
     use "kyazdani42/nvim-tree.lua"
     --  ColorSchemes
     use "morhetz/gruvbox"
+    use "ayu-theme/ayu-vim"
     --  AutoPairs
     use "windwp/nvim-autopairs"
     --  Comments
@@ -73,4 +74,7 @@ return packer.startup(
     use "simrat39/symbols-outline.nvim"
     --  Flutter
     use "thosakwe/vim-flutter"
+    --  Impatient
+    use "lewis6991/impatient.nvim"
   end)
+
