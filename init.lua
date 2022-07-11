@@ -1,4 +1,10 @@
 require "user.options"
+
+local status_ok, impatient = pcall(require, "impatient")
+if status_ok then
+  impatient.enable_profile()
+end
+
 require "user.keymaps"
 require "user.plugins"
 require "user.colorscheme"
@@ -13,3 +19,4 @@ require "user.gitblamer"
 require "user.multi-cursor"
 require "user.toggleterm"
 require "user.outline"
+require "user.snippets"
