@@ -84,6 +84,11 @@ _G.packer_plugins = {
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/LuaSnip",
     url = "https://github.com/L3MON4D3/LuaSnip"
   },
+  ["ayu-vim"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/ayu-vim",
+    url = "https://github.com/ayu-theme/ayu-vim"
+  },
   ["blamer.nvim"] = {
     loaded = true,
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/blamer.nvim",
@@ -123,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/gruvbox",
     url = "https://github.com/morhetz/gruvbox"
+  },
+  ["impatient.nvim"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/impatient.nvim",
+    url = "https://github.com/lewis6991/impatient.nvim"
   },
   lazygit = {
     loaded = true,
@@ -188,6 +198,16 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
+  },
+  ["vim-flutter"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/vim-flutter",
+    url = "https://github.com/thosakwe/vim-flutter"
+  },
+  ["vim-startuptime"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/vim-startuptime",
+    url = "https://github.com/dstein64/vim-startuptime"
   },
   ["vim-visual-multi"] = {
     loaded = true,

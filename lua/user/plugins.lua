@@ -60,6 +60,7 @@ return packer.startup(
     --  LSP
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    -- use "williamboman/mason.nvim"
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
     --  UI
     use "nvim-lualine/lualine.nvim"
@@ -76,5 +77,7 @@ return packer.startup(
     use "thosakwe/vim-flutter"
     --  Impatient
     use "lewis6991/impatient.nvim"
+    -- Startup 
+    use "dstein64/vim-startuptime"
   end)
 
