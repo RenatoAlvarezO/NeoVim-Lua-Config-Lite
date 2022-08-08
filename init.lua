@@ -5,7 +5,6 @@ if status_ok then
   impatient.enable_profile()
 end
 
-require "user.keymaps"
 require "user.plugins"
 require "user.colorscheme"
 require "user.cmp"
@@ -20,3 +19,4 @@ require "user.multi-cursor"
 require "user.toggleterm"
 require "user.outline"
 require "user.snippets"
+require "user.keymaps"
