@@ -26,8 +26,8 @@ keymap("n", "<C-\\>","<C-w>v",opts)
 
 --  Buffer Navigation
 keymap("n","<s-l>",":bnext<cr>",opts)
-keymap("n","<s-k>",":bprevious<cr>",opts)
-
+keymap("n","<s-h>",":bprevious<cr>",opts)
+keymap("n","<leader>c", ":bd<cr>",{})
 --  Move lines
 keymap("n","<A-j>","<Esc>:m .+1<CR>==gi",opts)
 keymap("n","<A-k>",":<Esc>:m .-2<CR>==gi<cr>",opts)
@@ -51,7 +51,7 @@ keymap('n', '<C-_>', '<CMD>lua require("Comment.api").toggle_current_linewise()<
 keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>',{})
 
 --  Formatting
-keymap('n',"<s-a-f>",'<CMD>lua vim.lsp.buf.formatting()<CR>',opts)
+-- keymap('n',"<s-a-f>",'<CMD>lua vim.lsp.buf.formatting()<CR>',opts)
 
 -- Telescope
 keymap("","<C-p>",":Telescope find_files theme=dropdown previewer=false<CR>",{})
@@ -67,3 +67,13 @@ keymap("n","<A-z>",":set wrap!<cr>",opts)
 
 --  Outline
 keymap("n","<A-o>",":SymbolsOutline <cr>",opts)
+
+
+--  Coc
+keymap("n","gd","<Plug>(coc-definition)",opts)
+keymap("n","gr","<Plug>(coc-references)",opts)
+keymap("n","gi","<Plug>(coc-implementation)",opts)
+keymap("n","ga","<Plug>(coc-codeaction)",opts)
+keymap("n","gl","<Plug>(coc-diagnostic-info)",opts)
+keymap('n',"<s-a-f>",'<Plug>(coc-format)',opts)
+vim.cmd[[inoremap <expr> <cr> coc#pum#visible() ? coc#pum#confirm() : v:lua.MPairs.completion_confirm()]]

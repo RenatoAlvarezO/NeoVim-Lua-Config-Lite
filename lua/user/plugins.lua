@@ -1,7 +1,6 @@
 local fn = vim.fn
 
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
+local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim" if fn.empty(fn.glob(install_path)) > 0 then
   PACKER_BOOTSTRAP = fn.system {
     "git",
     "clone",
@@ -18,6 +17,14 @@ local status_ok, packer = pcall(require, "packer")
 if not status_ok then
   return
 end
+
+-- Autocommand that reloads neovim whenever you save the plugins.lua file
+vim.cmd [[
+  augroup packer_user_config
+    autocmd!
+    autocmd BufWritePost plugins.lua source <afile> | PackerSync
+  augroup end
+]]
 
 
 packer.init {
@@ -60,8 +67,11 @@ return packer.startup(
     --  LSP
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-    -- use "williamboman/mason.nvim"
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
+    use  {
+        "neoclide/coc.nvim",
+        branch = 'release'
+    }
     --  UI
     use "nvim-lualine/lualine.nvim"
     use "akinsho/toggleterm.nvim"
