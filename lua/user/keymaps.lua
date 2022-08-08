@@ -52,6 +52,7 @@ keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vi
 
 --  Formatting
 keymap('n',"<s-a-f>",'<CMD>lua vim.lsp.buf.formatting()<CR>',opts)
+keymap('v',"<s-a-f>","<cmd>lua vim.lsp.buf.range_formatting()<CR><ESC>",{})
 
 -- Telescope
 keymap("","<C-p>",":Telescope find_files theme=dropdown previewer=false<CR>",{})
@@ -67,3 +68,6 @@ keymap("n","<A-z>",":set wrap!<cr>",opts)
 
 --  Outline
 keymap("n","<A-o>",":SymbolsOutline <cr>",opts)
+
+--  Terminal
+keymap("n","<s-a-t>","<C-W>s:terminal<CR>i",{})
