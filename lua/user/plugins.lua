@@ -86,5 +86,8 @@ return packer.startup(
     use "lewis6991/impatient.nvim"
     -- Startup 
     use "dstein64/vim-startuptime"
+    --  DAP
+    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
+    use "leoluz/nvim-dap-go"
   end)
 
