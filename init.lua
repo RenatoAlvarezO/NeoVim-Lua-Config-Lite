@@ -20,9 +20,11 @@ require "user.toggleterm"
 require "user.outline"
 require "user.snippets"
 require "user.dap"
+require "user.mason"
+require "user.flutter"
 require "user.keymaps"
 
 --TODO: Quitar
-vim.cmd[[
-  let g:flutter_command = "/home/renato/Documentos/Trabajo/2022/FlutterSDK/flutter_2.2.2/bin/flutter" 
-]]
+-- vim.cmd[[
+--   let g:flutter_command = "/home/renato/Documentos/Trabajo/2022/FlutterSDK/flutter_2.2.2/bin/flutter" 
+-- ]]

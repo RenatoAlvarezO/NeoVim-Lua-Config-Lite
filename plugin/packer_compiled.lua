@@ -119,6 +119,11 @@ _G.packer_plugins = {
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/cmp_luasnip",
     url = "https://github.com/saadparwaiz1/cmp_luasnip"
   },
+  ["flutter-tools.nvim"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/flutter-tools.nvim",
+    url = "https://github.com/akinsho/flutter-tools.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
@@ -144,6 +149,11 @@ _G.packer_plugins = {
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
   },
+  ["mason.nvim"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/mason.nvim",
+    url = "https://github.com/williamboman/mason.nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/nvim-autopairs",
@@ -153,6 +163,21 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/nvim-cmp",
     url = "https://github.com/hrsh7th/nvim-cmp"
+  },
+  ["nvim-dap"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/nvim-dap",
+    url = "https://github.com/mfussenegger/nvim-dap"
+  },
+  ["nvim-dap-go"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/nvim-dap-go",
+    url = "https://github.com/leoluz/nvim-dap-go"
+  },
+  ["nvim-dap-ui"] = {
+    loaded = true,
+    path = "/home/renato/.local/share/nvim/site/pack/packer/start/nvim-dap-ui",
+    url = "https://github.com/rcarriga/nvim-dap-ui"
   },
   ["nvim-lsp-installer"] = {
     loaded = true,
@@ -198,11 +223,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/renato/.local/share/nvim/site/pack/packer/start/toggleterm.nvim",
     url = "https://github.com/akinsho/toggleterm.nvim"
-  },
-  ["vim-flutter"] = {
-    loaded = true,
-    path = "/home/renato/.local/share/nvim/site/pack/packer/start/vim-flutter",
-    url = "https://github.com/thosakwe/vim-flutter"
   },
   ["vim-startuptime"] = {
     loaded = true,

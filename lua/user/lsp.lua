@@ -14,6 +14,7 @@ local opts = {
   on_attach = require("user.handlers.lsp").on_attach,
   capabilities = require("user.handlers.lsp").capabilites,
 }
+
 local config = {
   signs = {
     active = signs
