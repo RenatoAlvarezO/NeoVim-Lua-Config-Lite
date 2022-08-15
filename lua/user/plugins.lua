@@ -44,6 +44,7 @@ return packer.startup(
       "nvim-treesitter/nvim-treesitter",
       run = ":TSUpdate",
     }
+    use "norcalli/nvim-colorizer.lua"
     --  MultiCursor
     use "mg979/vim-visual-multi"
     --  Nvim Tree (side tree)
@@ -52,6 +53,7 @@ return packer.startup(
     --  ColorSchemes
     use "morhetz/gruvbox"
     use "ayu-theme/ayu-vim"
+    use 'shaunsingh/solarized.nvim'
     --  AutoPairs
     use "windwp/nvim-autopairs"
     --  Comments
