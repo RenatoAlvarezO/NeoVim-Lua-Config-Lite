@@ -47,8 +47,8 @@ keymap("","<C-c>",'"+y <CR>',{}) -- Copy to system clipboard
 keymap('n','<C-q>', ':q <CR>', {}) --Quit
 
 --  Commenting (Requires Plugin)
-keymap('n', '<C-_>', '<CMD>lua require("Comment.api").toggle_current_linewise()<CR>',{})
-keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>',{})
+keymap('n', '<C-_>', '<CMD>lua require("Comment.api").toggle.linewise.current()<CR>',{})
+keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").locked("comment.linewise")(vim.fn.visualmode())<CR>',{})
 
 --  Formatting
 keymap('n',"<s-a-f>",'<CMD>lua vim.lsp.buf.formatting()<CR>',opts)
@@ -58,7 +58,7 @@ keymap('v',"<s-a-f>","<cmd>lua vim.lsp.buf.range_formatting()<CR><ESC>",{})
 keymap("","<C-p>",":Telescope find_files theme=dropdown previewer=false<CR>",{})
 keymap("","<C-f>",":Telescope live_grep<cr>",{})
 keymap("","<Space>b",":Telescope buffers theme=dropdown previewer=false<CR>",{})
-keymap("n","<leader>b",":Telescope buffers theme=dropdown previewer=false<CR>",{})
+keymap("n","<leader>b",":Telescope buffers previewer=false<CR>",{})
 
 --  ToggleTerm
 keymap("","<C-g>","<cmd> lua _LAZYGIT_TOGGLE()<CR>",{})

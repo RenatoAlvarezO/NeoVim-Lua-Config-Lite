@@ -51,9 +51,10 @@ return packer.startup(
     use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
     --  ColorSchemes
-    use "morhetz/gruvbox"
-    use "ayu-theme/ayu-vim"
-    use 'shaunsingh/solarized.nvim'
+    use "rafi/awesome-vim-colorschemes"
+    -- use "morhetz/gruvbox"
+    -- use "ayu-theme/ayu-vim"
+    -- use 'shaunsingh/solarized.nvim'
     --  AutoPairs
     use "windwp/nvim-autopairs"
     --  Comments
