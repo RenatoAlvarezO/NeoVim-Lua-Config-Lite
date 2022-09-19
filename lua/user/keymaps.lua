@@ -26,7 +26,7 @@ keymap("n", "<C-\\>","<C-w>v",opts)
 
 --  Buffer Navigation
 keymap("n","<s-l>",":bnext<cr>",opts)
-keymap("n","<s-k>",":bprevious<cr>",opts)
+keymap("n","<s-h>",":bprevious<cr>",opts)
 keymap("n","<leader>c",":bd<cr>",opts)
 --  Move lines
 keymap("n","<A-j>","<Esc>:m .+1<CR>==gi",opts)
