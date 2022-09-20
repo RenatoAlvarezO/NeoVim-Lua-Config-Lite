@@ -77,6 +77,7 @@ return packer.startup(
     --  UI
     use "nvim-lualine/lualine.nvim"
     use "akinsho/toggleterm.nvim"
+    use "akinsho/bufferline.nvim"
     --  Git
     use "lewis6991/gitsigns.nvim"
     use "jesseduffield/lazygit"
