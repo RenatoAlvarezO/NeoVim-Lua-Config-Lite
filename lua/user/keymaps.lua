@@ -48,7 +48,7 @@ keymap('n','<C-q>', ':q <CR>', {}) --Quit
 
 --  Commenting (Requires Plugin)
 keymap('n', '<C-_>', '<CMD>lua require("Comment.api").toggle.linewise.current()<CR>',{})
-keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").locked("comment.linewise")(vim.fn.visualmode())<CR>',{})
+keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").locked("toggle.linewise")(vim.fn.visualmode())<CR>',{})
 
 --  Formatting
 keymap('n',"<s-a-f>",'<CMD>lua vim.lsp.buf.formatting()<CR>',opts)
