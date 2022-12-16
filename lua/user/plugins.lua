@@ -52,9 +52,6 @@ return packer.startup(
     use "kyazdani42/nvim-tree.lua"
     --  ColorSchemes
     use "rafi/awesome-vim-colorschemes"
-    -- use "morhetz/gruvbox"
-    -- use "ayu-theme/ayu-vim"
-    -- use 'shaunsingh/solarized.nvim'
     --  AutoPairs
     use "windwp/nvim-autopairs"
     --  Comments
@@ -71,7 +68,7 @@ return packer.startup(
     use "L3MON4D3/LuaSnip" --snippet engine
     --  LSP
     use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/nvim-lsp-installer" -- simple to use language server installer
+    use "williamboman/mason-lspconfig.nvim"
     use "williamboman/mason.nvim"
     use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
     --  UI

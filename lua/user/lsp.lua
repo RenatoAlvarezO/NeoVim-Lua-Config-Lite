@@ -4,11 +4,19 @@ if not status_ok then
   return
 end
 
-local lsp_status_ok, lsp_installer = pcall(require, "nvim-lsp-installer")
+local lsp_status_ok, lsp_installer = pcall(require, "mason")
 if not lsp_status_ok then
   print 'LSP INSTALLER ERROR'
   return
 end
+
+local lsp_mason_status_ok, lsp_mason = pcall(require, "mason-lspconfig")
+if not lsp_mason_status_ok then
+  print 'LSP MASON ERROR'
+  return
+end
+
+lsp_mason.setup{}
 
 local opts = {
   on_attach = require("user.handlers.lsp").on_attach,
@@ -24,18 +32,11 @@ local config = {
   severity_sort = true,
 }
 
-lsp_installer.on_server_ready(function(server)
+lsp_installer.setup();
 
-  vim.diagnostic.config(config)
-
-  server:setup(opts)
-end)
-
-lspconfig['pasls'].setup{
-  on_attach = opts.on_attach,
-  capabilities = opts.capabilities
-};
-
-
+local my_servers = lsp_mason.get_installed_servers()
+for _,value in pairs(my_servers) do
+    lspconfig[value].setup(opts)
+end
 
 require("user.handlers.lsp").setup()
