@@ -52,6 +52,7 @@ return packer.startup(
     use "kyazdani42/nvim-tree.lua"
     --  ColorSchemes
     use "rafi/awesome-vim-colorschemes"
+    use "sainnhe/everforest"
     --  AutoPairs
     use "windwp/nvim-autopairs"
     --  Comments
