@@ -19,7 +19,7 @@ local diagnostics = {
 
 local diff = {
     "diff",
-    colored = false,
+    colored = true,
     symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
     cond = hide_in_width
 }
@@ -34,6 +34,7 @@ local mode = {
 local filetype = {
     "filetype",
     icons_enabled = true,
+    separator = { left = '', right = '' }
     -- icon = nil,
 }
 
@@ -41,11 +42,13 @@ local branch = {
     "branch",
     icons_enabled = true,
     icon = "",
+    separator = { left = '' }
 }
 
 local location = {
     "location",
-    padding = 0,
+    padding = 2,
+    separator = { left = '' }
 }
 
 local buffers = {
@@ -77,7 +80,8 @@ lualine.setup({
     options = {
         icons_enabled = true,
         theme = "auto",
-        -- section_separators = { left = "", right = "" },
+        component_separators = { left = "    ", right = "   " },
+        section_separators = { left = '', right = '' },
         disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
         always_divide_middle = true,
     },
@@ -88,7 +92,7 @@ lualine.setup({
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "encoding" },
         lualine_y = { filetype, location },
-        lualine_z = { progress },
+        lualine_z = { { progress, separator = { right = '', left = '' } } },
     },
     inactive_sections = {
         lualine_a = {},
