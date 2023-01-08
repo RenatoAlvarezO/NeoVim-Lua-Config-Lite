@@ -56,9 +56,10 @@ keymap('v',"<s-a-f>","<cmd>lua vim.lsp.buf.range_formatting()<CR><ESC>",{})
 
 -- Telescope
 keymap("","<C-p>",":Telescope find_files theme=dropdown previewer=false<CR>",{})
-keymap("","<C-f>",":Telescope live_grep<cr>",{})
+keymap("","<C-f>",":Telescope live_grep theme=dropdown<cr>",{})
 keymap("","<Space>b",":Telescope buffers theme=dropdown previewer=false<CR>",{})
-keymap("n","<leader>b",":Telescope buffers previewer=false<CR>",{})
+keymap("n","<leader>b",":Telescope buffers theme=dropdown previewer=false<CR>",{})
+keymap("n","<leader>d",":Telescope diagnostics theme=dropdown <CR>",{})
 
 --  ToggleTerm
 keymap("","<C-g>","<cmd> lua _LAZYGIT_TOGGLE()<CR>",{})
