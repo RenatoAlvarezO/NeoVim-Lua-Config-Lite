@@ -82,6 +82,7 @@ return packer.startup(
     use "APZelos/blamer.nvim"
     --  Telescope
     use "nvim-telescope/telescope.nvim"
+    use 'nvim-telescope/telescope-ui-select.nvim'
     -- Outline
     use "simrat39/symbols-outline.nvim"
     --  Flutter
