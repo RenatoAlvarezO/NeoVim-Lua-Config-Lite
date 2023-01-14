@@ -6,6 +6,10 @@ local flutter = require("flutter-tools")
 
 flutter.setup(
   {
+    lsp = {
+        on_attach = require("user.handlers.lsp").on_attach,
+        capabilities = require("user.handlers.lsp").capabilities,
+    },
     debugger = {
       enabled = true,
       register_configurations = function(_)

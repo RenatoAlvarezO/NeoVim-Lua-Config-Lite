@@ -6,6 +6,7 @@ if status_ok then
 end
 
 require "user.plugins"
+require "user.flutter"
 require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
@@ -22,7 +23,7 @@ require "user.outline"
 require "user.snippets"
 require "user.dap"
 require "user.mason"
-require "user.flutter"
+require "user.telescope"
 require "user.keymaps"
 
 require('colorizer').setup()
