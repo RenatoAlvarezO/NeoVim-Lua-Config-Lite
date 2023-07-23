@@ -51,7 +51,7 @@ keymap('n', '<C-_>', '<CMD>lua require("Comment.api").toggle.linewise.current()<
 keymap('x', '<C-_>', '<ESC><CMD>lua require("Comment.api").locked("toggle.linewise")(vim.fn.visualmode())<CR>',{})
 
 --  Formatting
-keymap('n',"<s-a-f>",'<CMD>lua vim.lsp.buf.formatting()<CR>',opts)
+keymap('n',"<s-a-f>",'<CMD>lua vim.lsp.buf.format()<CR>',opts)
 keymap('v',"<s-a-f>","<cmd>lua vim.lsp.buf.range_formatting()<CR><ESC>",{})
 
 -- Telescope
