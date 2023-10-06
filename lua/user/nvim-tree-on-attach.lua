@@ -17,7 +17,6 @@
 
 local function on_attach(bufnr)
     
-    print("okupa del orto")
   local api = require('nvim-tree.api')
 
   local function opts(desc)
