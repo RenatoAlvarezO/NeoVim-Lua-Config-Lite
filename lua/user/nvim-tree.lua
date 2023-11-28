@@ -6,13 +6,6 @@ if not status_ok then
   return
 end
 
-local config_status_ok, nvim_tree_config = pcall(require, "nvim-tree.config")
-if not config_status_ok then
-  return
-end
-
-local tree_cb = nvim_tree_config.nvim_tree_callback
-
 local tree_setup_ok, tree_setup = pcall(require, "nvim-tree-on-attach")
 
 nvim_tree.setup {
