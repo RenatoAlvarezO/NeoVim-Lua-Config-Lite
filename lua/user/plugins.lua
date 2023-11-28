@@ -48,8 +48,8 @@ return packer.startup(
     --  MultiCursor
     use "mg979/vim-visual-multi"
     --  Nvim Tree (side tree)
-    use "kyazdani42/nvim-web-devicons"
-    use "kyazdani42/nvim-tree.lua"
+    use "nvim-tree/nvim-web-devicons"
+    use "nvim-tree/nvim-tree.lua"
     --  ColorSchemes
     use "rafi/awesome-vim-colorschemes"
     use "sainnhe/everforest"
