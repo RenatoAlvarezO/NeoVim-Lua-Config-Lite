@@ -19,7 +19,7 @@ opts.setup = function()
   end
 
   local config = {
-    virtual_text = false,
+    virtual_text = true,
     underline = true,
     signs = {
       active = signs,
@@ -79,6 +79,7 @@ end
 opts.on_attach = function(client, buffer)
   lsp_keymaps(buffer)
   lsp_highlight_document(client)
+  vim.lsp.inlay_hint.enable(buffer, true)
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
