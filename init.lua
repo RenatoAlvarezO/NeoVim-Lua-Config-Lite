@@ -5,6 +5,7 @@ if status_ok then
   impatient.enable_profile()
 end
 
+require "user.lazy"
 require "user.plugins"
 require "user.flutter"
 require "user.colorscheme"

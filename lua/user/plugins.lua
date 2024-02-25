@@ -1,99 +1,90 @@
-local fn = vim.fn
+local fn = vim.fnp
+local cmd = vim.cmd
 
-local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
-if fn.empty(fn.glob(install_path)) > 0 then
-  PACKER_BOOTSTRAP = fn.system {
-    "git",
-    "clone",
-    "--depth",
-    "1",
-    "https://github.com/wbthomason/packer.nvim",
-    install_path,
-  }
-  print "Installing packer close and reopen Neovim..."
-  vim.cmd [[packadd packer.nvim]]
-end
 
-local status_ok, packer = pcall(require, "packer")
-if not status_ok then
-  return
-end
+local plugins = {
+  -- Extra Functions
+  "nvim-lua/plenary.nvim",
 
--- Autocommand that reloads neovim whenever you save the plugins.lua file
-vim.cmd [[
-  augroup packer_user_config
-    autocmd!
-    autocmd BufWritePost plugins.lua source <afile> | PackerSync
-  augroup end
-]]
-
-packer.init {
-  display = {
-    open_fn = function()
-      return require("packer.util").float { border = "rounded" }
-    end,
+  -- TreeSitter (Syntax Highligthing)
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
   },
+
+  "norcalli/nvim-colorizer.lua",
+
+  --  MultiCursor
+  {
+      "mg979/vim-visual-multi",
+        setup = function() 
+            vim.g.VM_maps = {
+                ["Find Under"] = "<C-d>",
+                ["Find Subword Under"] = "<C-d>",
+            }
+        end
+    },
+
+  --  Nvim Tree (side tree,
+  "nvim-tree/nvim-web-devicons",
+  "nvim-tree/nvim-tree.lua",
+
+  --  ColorSchemes
+  "rafi/awesome-vim-colorschemes",
+  "sainnhe/everforest",
+
+  --  AutoPairs
+  "windwp/nvim-autopairs",
+
+  --  Comments
+  "numToStr/Comment.nvim",
+
+  --  Complition
+  "hrsh7th/nvim-cmp", -- The completion plugin
+  "hrsh7th/cmp-buffer", -- buffer completions
+  "hrsh7th/cmp-path", -- path completions
+  "hrsh7th/cmp-cmdline", -- cmdline completions
+
+  --  Snippets
+  "saadparwaiz1/cmp_luasnip", -- snippet completions
+  "hrsh7th/cmp-nvim-lsp",
+  "rafamadriz/friendly-snippets", -- a bunch of snippets to use
+  "L3MON4D3/LuaSnip", --snippet engine
+
+  --  LSP
+  "neovim/nvim-lspconfig", -- enable LSPp
+  "williamboman/mason-lspconfig.nvim",
+  "williamboman/mason.nvim",
+  "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
+
+  --  UI
+  "nvim-lualine/lualine.nvim",
+  "akinsho/toggleterm.nvim",
+  "akinsho/bufferline.nvim",
+
+  --  Git
+  "lewis6991/gitsigns.nvim",
+  "jesseduffield/lazygit",
+  "APZelos/blamer.nvim",
+
+  --  Telescope
+  "nvim-telescope/telescope.nvim",
+  "nvim-telescope/telescope-ui-select.nvim",
+
+  -- Outline
+  "simrat39/symbols-outline.nvim",
+
+  --  Flutter
+  "akinsho/flutter-tools.nvim",
+
+  --  Impatient
+  "lewis6991/impatient.nvim",
+
+  -- Startup
+  "dstein64/vim-startuptime",
+
+  --  DAP
+  { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+  "leoluz/nvim-dap-go",
 }
-
-return packer.startup(
-  function(use)
-    -- Extra Functions
-    use "nvim-lua/plenary.nvim" -- Useful lua functions used ny lots of plugins
-    -- TreeSitter (Syntax Highligthing)
-    use {
-      "nvim-treesitter/nvim-treesitter",
-      run = ":TSUpdate",
-    }
-    use "norcalli/nvim-colorizer.lua"
-    --  MultiCursor
-    use "mg979/vim-visual-multi"
-    --  Nvim Tree (side tree)
-    use "nvim-tree/nvim-web-devicons"
-    use "nvim-tree/nvim-tree.lua"
-    --  ColorSchemes
-    use "rafi/awesome-vim-colorschemes"
-    use "sainnhe/everforest"
-    --  AutoPairs
-    use "windwp/nvim-autopairs"
-    --  Comments
-    use "numToStr/Comment.nvim"
-    --  Complition
-    use "hrsh7th/nvim-cmp" -- The completion plugin
-    use "hrsh7th/cmp-buffer" -- buffer completions
-    use "hrsh7th/cmp-path" -- path completions
-    use "hrsh7th/cmp-cmdline" -- cmdline completions
-    --  Snippets
-    use "saadparwaiz1/cmp_luasnip" -- snippet completions
-    use "hrsh7th/cmp-nvim-lsp"
-    use "rafamadriz/friendly-snippets" -- a bunch of snippets to use
-    use "L3MON4D3/LuaSnip" --snippet engine
-    --  LSP
-    use "neovim/nvim-lspconfig" -- enable LSP
-    use "williamboman/mason-lspconfig.nvim"
-    use "williamboman/mason.nvim"
-    use "antoinemadec/FixCursorHold.nvim" -- This is needed to fix lsp doc highlight
-    --  UI
-    use "nvim-lualine/lualine.nvim"
-    use "akinsho/toggleterm.nvim"
-    use "akinsho/bufferline.nvim"
-    --  Git
-    use "lewis6991/gitsigns.nvim"
-    use "jesseduffield/lazygit"
-    use "APZelos/blamer.nvim"
-    --  Telescope
-    use "nvim-telescope/telescope.nvim"
-    use 'nvim-telescope/telescope-ui-select.nvim'
-    -- Outline
-    use "simrat39/symbols-outline.nvim"
-    --  Flutter
-    use "akinsho/flutter-tools.nvim"
-    -- use "thosakwe/vim-flutter"
-    --  Impatient
-    use "lewis6991/impatient.nvim"
-    -- Startup 
-    use "dstein64/vim-startuptime"
-    --  DAP
-    use { "rcarriga/nvim-dap-ui", requires = {"mfussenegger/nvim-dap"} }
-    use "leoluz/nvim-dap-go"
-  end)
-
+require("lazy").setup(plugins)
