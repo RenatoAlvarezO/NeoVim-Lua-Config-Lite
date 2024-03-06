@@ -17,7 +17,7 @@ local plugins = {
   --  MultiCursor
   {
       "mg979/vim-visual-multi",
-        setup = function() 
+        init = function()
             vim.g.VM_maps = {
                 ["Find Under"] = "<C-d>",
                 ["Find Subword Under"] = "<C-d>",
@@ -30,7 +30,8 @@ local plugins = {
   "nvim-tree/nvim-tree.lua",
 
   --  ColorSchemes
-  "rafi/awesome-vim-colorschemes",
+  "rafi/awesome-vim-colorschemes", 
+  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   "sainnhe/everforest",
 
   --  AutoPairs
