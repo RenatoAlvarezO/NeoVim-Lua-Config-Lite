@@ -86,6 +86,7 @@ local plugins = {
 
   --  DAP
   { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap"} },
+  { "nvim-neotest/nvim-nio" },
   "leoluz/nvim-dap-go",
 }
 require("lazy").setup(plugins)

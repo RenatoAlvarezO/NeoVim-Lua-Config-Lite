@@ -79,7 +79,7 @@ end
 opts.on_attach = function(client, buffer)
   lsp_keymaps(buffer)
   lsp_highlight_document(client)
-  vim.lsp.inlay_hint.enable(buffer, true)
+  vim.lsp.inlay_hint.enable(true, {bufnr = buffer})
 end
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
