@@ -7,11 +7,13 @@ vim.cmd[[
   let g:gruvbox_underscore = 1
   let g:gruvbox_transparent_bg = 1
   set background=dark
-  let g:everforest_enable_italic = 1
   let g:everforest_background="hard"
+  let g:everforest_better_performance=1
+  let g:everforest_enable_italic = 1
+  let g:everforest_transparent_background = 1
   let ayucolor = "mirage"
-  colorscheme catppuccin-mocha 
   hi! Normal ctermbg=NONE guibg=NONE
+  colorscheme everforest 
 ]]
 
 
