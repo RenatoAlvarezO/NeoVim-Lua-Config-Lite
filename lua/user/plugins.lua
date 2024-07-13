@@ -30,7 +30,8 @@ local plugins = {
   "nvim-tree/nvim-tree.lua",
 
   --  ColorSchemes
-  "rafi/awesome-vim-colorschemes", 
+--  "rafi/awesome-vim-colorschemes", 
+  { "ellisonleao/gruvbox.nvim", priority = 1000 , config = true, opts = ...},
   { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
   "sainnhe/everforest",
 
