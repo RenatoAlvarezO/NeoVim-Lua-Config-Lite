@@ -38,7 +38,7 @@ vim.cmd[[
   let g:everforest_transparent_background = 1
   let ayucolor = "mirage"
   " hi! Normal ctermbg=NONE guibg=NONE
-  colorscheme gruvbox 
+  colorscheme catppuccin-mocha  
 ]]
 
 

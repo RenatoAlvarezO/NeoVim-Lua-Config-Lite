@@ -58,6 +58,14 @@ local plugins = {
   "williamboman/mason-lspconfig.nvim",
   "williamboman/mason.nvim",
   "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
+  {
+    "olexsmir/gopher.nvim",
+    ft = "go",
+    opts = {},
+    build = function()
+        vim.cmd.GoInstallDeps()
+      end,
+  },
 
   --  UI
   "nvim-lualine/lualine.nvim",
