@@ -4,7 +4,7 @@
 --     show_numbers = true,
 -- }
 
-local ok, outline = pcall(require, "symbols-outline");
+local ok, outline = pcall(require, "outline");
 if not ok then
     print('outline no cargo')
     return

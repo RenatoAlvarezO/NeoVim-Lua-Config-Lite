@@ -2,20 +2,22 @@ local opts = {}
 
 opts.setup = function()
   local signs = {
-    { name = "DiagnosticSignError", text = "" },
-    { name = "DiagnosticSignWarn", text = "" },
-    { name = "DiagnosticSignHint", text = "" },
-    { name = "DiagnosticSignInfo", text = "" },
+    { name = "DiagnosticSignError", text = "" , level = vim.diagnostic.severity.ERROR},
+    { name = "DiagnosticSignWarn", text = "", level = vim.diagnostic.severity.WARN},
+    { name = "DiagnosticSignHint", text = "", level = vim.diagnostic.severity.HINT},
+    { name = "DiagnosticSignInfo", text = "", level = vim.diagnostic.severity.INFO},
+  }
+
+  local config_signs = {
+    text = {},
+    linehl = {},
+    numhl = {}
   }
 
   for _, sign in ipairs(signs) do
-    vim.fn.sign_define(sign.name,
-      {
-        texthl = sign.name,
-        text = sign.text,
-        numhl = ""
-      }
-    )
+    config_signs.text[sign.level] = sign.text
+    config_signs.linehl[sign.level] = sign.name
+    config_signs.numhl[sign.level] = ""
   end
 
   local config = {
@@ -25,12 +27,9 @@ opts.setup = function()
       active = signs,
       update_in_insert = true,
       underline = true,
-      float = {
-        --  focusable = false,
-        --        style = "minimal",
-        --      border = "rounded",
-        --    source = "always",
-      }
+      text = config_signs.text,
+      -- linehl = config_signs.linehl,
+      numhl = config_signs.numhl,
     }
   }
 
@@ -60,24 +59,8 @@ local function lsp_highlight_document(client)
   end
 end
 
-local function lsp_keymaps(bufnr)
-  local keymaps_opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "GD", "<cmd>lua vim.lsp.buf.declaration()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition() <CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "GE", '<cmd>lua vim.diagnostic.goto_prev()<CR>', keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "ge", '<cmd>lua vim.diagnostic.goto_next()<CR>', keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", keymaps_opts)
-  vim.cmd [[ command! Format execute 'lua vim.lsp.buf.formatting()' ]]
-end
 
 opts.on_attach = function(client, buffer)
-  lsp_keymaps(buffer)
   lsp_highlight_document(client)
   vim.lsp.inlay_hint.enable(true, {bufnr = buffer})
 end

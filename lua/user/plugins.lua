@@ -55,8 +55,8 @@ local plugins = {
 
   --  LSP
   "neovim/nvim-lspconfig", -- enable LSPp
-  "williamboman/mason-lspconfig.nvim",
-  "williamboman/mason.nvim",
+  "mason-org/mason-lspconfig.nvim",
+  {"mason-org/mason.nvim", opts = {}},
   "antoinemadec/FixCursorHold.nvim", -- This is needed to fix lsp doc highlight
   {
     "olexsmir/gopher.nvim",
@@ -82,7 +82,7 @@ local plugins = {
   "nvim-telescope/telescope-ui-select.nvim",
 
   -- Outline
-  "simrat39/symbols-outline.nvim",
+  "hedyhli/outline.nvim",
 
   --  Flutter
   "akinsho/flutter-tools.nvim",

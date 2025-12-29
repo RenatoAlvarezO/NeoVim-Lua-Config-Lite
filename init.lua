@@ -7,7 +7,7 @@ end
 
 require "user.lazy"
 require "user.plugins"
-require "user.flutter"
+require "user.keymaps"
 require "user.colorscheme"
 require "user.cmp"
 require "user.lsp"
@@ -25,10 +25,5 @@ require "user.snippets"
 require "user.dap"
 require "user.mason"
 require "user.telescope"
-require "user.keymaps"
 
 require('colorizer').setup()
---TODO: Quitar
--- vim.cmd[[
---   let g:flutter_command = "/home/renato/Documentos/Trabajo/2022/FlutterSDK/flutter_2.2.2/bin/flutter" 
--- ]]

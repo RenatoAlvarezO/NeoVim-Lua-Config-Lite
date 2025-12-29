@@ -1,9 +1,3 @@
-local status_ok, lspconfig = pcall(require, "lspconfig")
-if not status_ok then
-    print 'LSP CONFIG ERROR'
-    return
-end
-
 local lsp_status_ok, lsp_installer = pcall(require, "mason")
 if not lsp_status_ok then
     print 'LSP INSTALLER ERROR'
@@ -36,16 +30,17 @@ lsp_installer.setup();
 
 local my_servers = lsp_mason.get_installed_servers()
 for _, value in pairs(my_servers) do
-    lspconfig[value].setup(opts)
-    if value == 'volar' then
-        local ts_opts = vim.tbl_deep_extend("force", {}, opts)
-        ts_opts.init_options = {
-            vue = {
-                hybridMode = false,
-            },
-        }
-        lspconfig[value].setup(ts_opts)
-    end
+    vim.lsp.config(value, opts)
+    -- lspconfig[value].setup(opts)
+    -- if value == 'volar' then
+    --     local ts_opts = vim.tbl_deep_extend("force", {}, opts)
+    --     ts_opts.init_options = {
+    --         vue = {
+    --             hybridMode = false,
+    --         },
+    --     }
+    --     lspconfig[value].setup(ts_opts)
+    -- end
 end
 
 require("user.handlers.lsp").setup()
