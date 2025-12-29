@@ -17,14 +17,6 @@ local opts = {
     capabilities = require("user.handlers.lsp").capabilites,
 }
 
-local config = {
-    signs = {
-        active = signs
-    },
-    update_in_insert = true,
-    underline = true,
-    severity_sort = true,
-}
 
 lsp_installer.setup();
 
