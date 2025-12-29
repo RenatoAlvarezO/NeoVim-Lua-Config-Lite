@@ -7,9 +7,7 @@ local keymap = vim.api.nvim_set_keymap
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-keymap("n", "<C-h>", "<C-w>h", opts)
-keymap("n", "<C-j>", "<C-w>j", opts)
-keymap("n", "<C-k>", "<C-w>k", opts)
+keymap("n", "<C-h>", "<C-w>h", opts) keymap("n", "<C-j>", "<C-w>j", opts) keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<C-\\>", "<C-w>v", opts)
 
@@ -65,12 +63,11 @@ keymap("n", "<s-a-t>", "<C-W>s:terminal<CR>i", {})
 
 local function lsp_keymaps(bufnr)
   local keymaps_opts = { noremap = true, silent = true }
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "GD", "<cmd>lua vim.lsp.buf.declaration()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", "<cmd>lua vim.lsp.buf.definition() <CR>", keymaps_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gd", ":Telescope lsp_definitions <CR>", keymaps_opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", keymaps_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gi", ":Telescope lsp_implementations<CR>", keymaps_opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", keymaps_opts)
-  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", keymaps_opts)
+  vim.api.nvim_buf_set_keymap(bufnr, "n", "gr", ":Telescope lsp_references <CR>", keymaps_opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "ga", "<cmd>lua vim.lsp.buf.code_action()<CR>", keymaps_opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "GE", '<cmd>lua vim.diagnostic.goto_prev()<CR>', keymaps_opts)
   vim.api.nvim_buf_set_keymap(bufnr, "n", "gl", '<cmd>lua vim.diagnostic.open_float()<CR>', keymaps_opts)
