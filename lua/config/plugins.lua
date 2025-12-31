@@ -9,6 +9,7 @@ local plugins = {
   { import = "plugins.ui.init" },
   { import = "plugins.lsp.init" },
   { import = "plugins.colorscheme.init" },
+  { import = "plugins.git.init" }
 }
 
 require("lazy").setup(plugins)
@@ -30,3 +31,5 @@ require "plugins.lsp.go"
 
 require "plugins.colorscheme.gruvbox"
 require "plugins.colorscheme.apply"
+
+require "plugins.git.gitsigns"
