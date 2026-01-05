@@ -19,6 +19,7 @@ require "plugins.completion.cmp"
 require "plugins.ui.nvim-tree"
 require "plugins.ui.bufferline"
 require "plugins.ui.lualine"
+require "plugins.ui.noice"
 
 require "plugins.dx.autopairs"
 require "plugins.dx.outline"

@@ -4,4 +4,5 @@ return {
 
   "nvim-lualine/lualine.nvim",
   "akinsho/bufferline.nvim",
+  "folke/noice.nvim",
 }
