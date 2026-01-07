@@ -14,7 +14,11 @@ return {
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-ui-select.nvim",
 	"akinsho/toggleterm.nvim",
-	{"lukas-reineke/indent-blankline.nvim", init = function ()
-	    require("ibl").setup()
-	end},
+	{
+		"folke/snacks.nvim",
+		opts = {
+			indent = {
+			},
+		},
+	},
 }
