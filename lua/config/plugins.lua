@@ -34,3 +34,6 @@ require "plugins.colorscheme.gruvbox"
 require "plugins.colorscheme.apply"
 
 require "plugins.git.gitsigns"
+
+require "plugins.syntax.treesitter"
+
