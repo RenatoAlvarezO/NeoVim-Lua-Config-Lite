@@ -37,3 +37,4 @@ require "plugins.git.gitsigns"
 
 require "plugins.syntax.treesitter"
 
+require "plugins.snippets.go"
