@@ -26,6 +26,7 @@ require "plugins.dx.outline"
 require "plugins.dx.telescope"
 require "plugins.dx.toggleterm"
 require "plugins.dx.lazygit"
+require "plugins.dx.opencode"
 
 require "plugins.lsp.lsp"
 require "plugins.lsp.go"

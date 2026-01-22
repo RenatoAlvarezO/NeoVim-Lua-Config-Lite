@@ -56,6 +56,7 @@ keymap("n", "<leader>d", ":Telescope diagnostics theme=dropdown <CR>", {})
 --  ToggleTerm
 
 keymap("", "<C-g>", "<cmd> lua _LAZYGIT_TOGGLE()<CR>", {})
+keymap("", "<C-o>", "<cmd> lua _OPENCODE_TOGGLE()<CR>", {})
 
 --  Wrap Text
 
