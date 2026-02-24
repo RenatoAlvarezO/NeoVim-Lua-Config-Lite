@@ -80,6 +80,20 @@ dapui.setup({
 	},
 })
 
+-- Breakpoint signs
+vim.fn.sign_define("DapBreakpoint",          { text = "●", texthl = "DapBreakpoint",          linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointCondition", { text = "◆", texthl = "DapBreakpointCondition", linehl = "", numhl = "" })
+vim.fn.sign_define("DapBreakpointRejected",  { text = "●", texthl = "DapBreakpointRejected",  linehl = "", numhl = "" })
+vim.fn.sign_define("DapLogPoint",            { text = "◉", texthl = "DapLogPoint",            linehl = "", numhl = "" })
+vim.fn.sign_define("DapStopped",             { text = "▶", texthl = "DapStopped", linehl = "DapStoppedLine", numhl = "" })
+
+vim.api.nvim_set_hl(0, "DapBreakpoint",          { link = "DiagnosticError" })
+vim.api.nvim_set_hl(0, "DapBreakpointCondition", { link = "DiagnosticWarn" })
+vim.api.nvim_set_hl(0, "DapBreakpointRejected",  { link = "Comment" })
+vim.api.nvim_set_hl(0, "DapLogPoint",            { link = "DiagnosticInfo" })
+vim.api.nvim_set_hl(0, "DapStopped",             { link = "DiagnosticOk" })
+vim.api.nvim_set_hl(0, "DapStoppedLine",         { link = "CursorLine" })
+
 -- Auto open/close dapui with debug sessions
 dap.listeners.after.event_initialized["dapui_config"] = function()
 	dapui.open()
