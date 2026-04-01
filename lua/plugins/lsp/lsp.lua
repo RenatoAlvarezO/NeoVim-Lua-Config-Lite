@@ -8,5 +8,6 @@ local opts = {
 vim.lsp.config("*", opts)
 
 require("plugins.lsp.langs.ui5_ls")
+require("plugins.lsp.langs.kotlin")
 
 handler.setup()
