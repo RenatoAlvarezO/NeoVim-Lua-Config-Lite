@@ -33,6 +33,7 @@ require "plugins.lsp.lsp"
 require "plugins.lsp.go"
 
 require "plugins.dap.go"
+require "plugins.dap.cs"
 
 require "plugins.colorscheme.gruvbox"
 require "plugins.colorscheme.apply"
